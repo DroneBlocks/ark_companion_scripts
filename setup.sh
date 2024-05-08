@@ -3,9 +3,9 @@
 # Prompt for sudo password at the start to cache it
 sudo true
 
-INSTALL_DDS_AGENT="y"
-INSTALL_LOGLOADER="y"
-INSTALL_POLARIS="y"
+INSTALL_DDS_AGENT="n"
+INSTALL_LOGLOADER="n"
+INSTALL_POLARIS="n"
 POLARIS_API_KEY=""
 USER_EMAIL="logs@arkelectron.com"
 UPLOAD_TO_FLIGHT_REVIEW="n"
@@ -60,31 +60,31 @@ if [ "$#" -gt 0 ]; then
 				;;
 		esac
 	done
-else
-	echo "Do you want to install micro-xrce-dds-agent? (y/n)"
-	read -r INSTALL_DDS_AGENT
+# else
+# 	echo "Do you want to install micro-xrce-dds-agent? (y/n)"
+# 	read -r INSTALL_DDS_AGENT
 
-	echo "Do you want to install logloader? (y/n)"
-	read -r INSTALL_LOGLOADER
+# 	echo "Do you want to install logloader? (y/n)"
+# 	read -r INSTALL_LOGLOADER
 
-	if [ "$INSTALL_LOGLOADER" = "y" ]; then
-		echo "Please enter your email: "
-		read -r USER_EMAIL
+# 	if [ "$INSTALL_LOGLOADER" = "y" ]; then
+# 		echo "Please enter your email: "
+# 		read -r USER_EMAIL
 
-		echo "Do you want to auto upload to PX4 Flight Review? (y/n)"
-		read -r UPLOAD_TO_FLIGHT_REVIEW
-		if [ "$UPLOAD_TO_FLIGHT_REVIEW" = "y" ]; then
-			echo "Do you want your logs to be public? (y/n)"
-			read -r PUBLIC_LOGS
-		fi
-	fi
+# 		echo "Do you want to auto upload to PX4 Flight Review? (y/n)"
+# 		read -r UPLOAD_TO_FLIGHT_REVIEW
+# 		if [ "$UPLOAD_TO_FLIGHT_REVIEW" = "y" ]; then
+# 			echo "Do you want your logs to be public? (y/n)"
+# 			read -r PUBLIC_LOGS
+# 		fi
+# 	fi
 
-	echo "Do you want to install the polaris-client-mavlink? (y/n)"
-	read -r INSTALL_POLARIS
-	if [ "$INSTALL_POLARIS" = "y" ]; then
-		echo "Enter API key: "
-		read -r POLARIS_API_KEY
-	fi
+# 	echo "Do you want to install the polaris-client-mavlink? (y/n)"
+# 	read -r INSTALL_POLARIS
+# 	if [ "$INSTALL_POLARIS" = "y" ]; then
+# 		echo "Enter API key: "
+# 		read -r POLARIS_API_KEY
+# 	fi
 
 fi
 
